@@ -2,8 +2,9 @@ import { ArrowRight, Star } from "lucide-react";
 import React from "react";
 import CustomHeading from "./typo/Heading";
 import CustomPara from "./typo/Para";
-import FadeInBlur from "./FadeInBlur";
+
 import { Button } from "./ui/button";
+import FadeInBlur from "./FadeInBlur";
 
 const ReviewSection = () => {
   return (
