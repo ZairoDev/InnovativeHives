@@ -68,15 +68,15 @@ const HeroPage = () => {
                 <FadeInBlur>
                   <div className="mt-8 space-y-4">
                     <div className="flex items-center gap-2 text-gray-300">
-                      <CheckCircle2 className="text-emerald-600 w-5 h-5" />
+                      <CheckCircle2 className="text-primary_color w-5 h-5" />
                       <span>No credit card required</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-300">
-                      <CheckCircle2 className="text-emerald-600 w-5 h-5" />
+                      <CheckCircle2 className="text-primary_color w-5 h-5" />
                       <span>Free 30 minute consultation</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-300">
-                      <CheckCircle2 className="text-emerald-600 w-5 h-5" />
+                      <CheckCircle2 className="text-primary_color w-5 h-5" />
                       <span>Free marketing report</span>
                     </div>
                   </div>
@@ -355,7 +355,7 @@ const HeroPage = () => {
             <FadeInBlur>
               {/* Online Advertising */}
               <div className="py-20 px-6 flex  border-r border-t lg:border-t-0 border-neutral-800 flex-col items-start">
-                <div className="w-24 h-24 rounded-full bg-[#4CAF50] flex items-center justify-center mb-6">
+                <div className="w-24 h-24 rounded-full bg-primary_color flex items-center justify-center mb-6">
                   <Rocket size={50} />
                 </div>
                 <h3 className="text-2xl font-normal text-white mb-4">
@@ -431,7 +431,7 @@ const HeroPage = () => {
           </div>
           <SlideInFromTop>
             <Button className="h-12 cursor-pointer  px-6 rounded-full bg-transparent border border-white/20 text-white hover:bg-white/10 transition-colors">
-              <Shield className="w-5 h-5 mr-2 text-emerald-500" />
+              <Shield className="w-5 h-5 mr-2 text-primary_color" />
               Get Free Consultation
               <span className="ml-2">
                 <ArrowRight size={18} />
@@ -844,16 +844,14 @@ const HeroPage = () => {
               priority
             />
           </div>
-
           {/* Gradient Overlay */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(16,185,129,0.7) 50%, rgba(16,185,129,1) 100%)",
+                "linear-gradient(90deg, rgba(183,102,74,0) 0%, rgba(183,102,74,0.7) 50%, rgba(183,102,74,1) 100%)",
             }}
           />
-
           {/* Content */}
           <div className="relative min-h-screen">
             <div className="absolute right-0 top-1/2 -translate-y-1/2 max-w-3xl px-8 md:px-16">
@@ -903,7 +901,7 @@ const HeroPage = () => {
                     "Ecommerce",
                   ].map((text) => (
                     <div key={text} className="flex items-center gap-2">
-                      <div className="rounded-full bg-[#EAA92B] p-1">
+                      <div className="rounded-full bg-primary_color p-1">
                         <CheckCircle className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-white lg:text-xl  text-lg">
@@ -1072,7 +1070,7 @@ const HeroPage = () => {
           <div className="p-2">
             <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-12 gap-8">
               {/* Left Column - Contact Info (30%) */}
-              <Card className="lg:col-span-4 bg-emerald-600 text-white border-0 w-full">
+              <Card className="lg:col-span-4 bg-primary_color text-white border-0 w-full">
                 <CardContent className="p-8 space-y-12">
                   {/* Address Section */}
                   <div className="flex items-start  gap-4">
