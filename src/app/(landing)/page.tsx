@@ -7,13 +7,9 @@ import {
   CheckCircle,
   CheckCircle2,
   CurlyBraces,
-  DribbbleIcon,
-  Facebook,
   FileText,
   GitBranch,
-  Instagram,
   Link2,
-  LucideFileInput,
   Mail,
   Map,
   MapPin,
@@ -24,21 +20,16 @@ import {
   Search,
   Shield,
   Star,
-  Target,
   Users,
 } from "lucide-react";
 import { Button } from "../../components/ui/button";
-import BlurIn from "../../components/ui/blur-in";
-
 import CustomPara from "@/components/typo/Para";
 import CustomHeading from "@/components/typo/Heading";
 import Image from "next/image";
 import FadeInBlur from "@/components/FadeInBlur";
 import SlideInFromTop from "@/components/SlideInFromTop";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Link from "next/link";
 import Footer from "@/components/Footer";
 
 const HeroPage = () => {
@@ -319,7 +310,7 @@ const HeroPage = () => {
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   The product aspects of marketing deal with the specifications
                   of the actual relevant products, goods or services, and how it
-                  relates to the end-user's needs and wants.
+                  relates to the end-user&apos;s needs and wants.
                 </p>
                 <div className="flex flex-col gap-2">
                   <span className="px-4 py-1.5 rounded-full border border-white/20 text-white text-sm">
