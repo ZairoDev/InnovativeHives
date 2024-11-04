@@ -29,7 +29,6 @@ import Image from "next/image";
 import FadeInBlur from "@/components/FadeInBlur";
 import SlideInFromTop from "@/components/SlideInFromTop";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import Footer from "@/components/Footer";
 
 const HeroPage = () => {
@@ -1159,10 +1158,10 @@ const HeroPage = () => {
                         Message
                       </label>
                     </FadeInBlur>
-                    <Textarea
+                    <textarea
                       id="message"
                       placeholder="Enter your message"
-                      className="w-full text-white bg-background_colour border-neutral-800 min-h-40 border px-4 focus:outline-none rounded-lg "
+                      className="w-full text-white py-4 bg-background_colour border-neutral-800 min-h-40 border px-4 focus:outline-none rounded-lg "
                     />
                   </div>
                   <div className="space-y-4">

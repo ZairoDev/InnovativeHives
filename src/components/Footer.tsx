@@ -1,4 +1,4 @@
-import { DribbbleIcon, Facebook, Instagram } from "lucide-react";
+import { DribbbleIcon, Facebook, Instagram, LucideProps } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import CustomHeading from "./typo/Heading";
@@ -72,7 +72,7 @@ const Footer = () => {
                     { icon: Facebook, label: "Facebook" },
                     { icon: Instagram, label: "Instagram" },
                     {
-                      icon: (props: any) => (
+                      icon: (props: LucideProps) => (
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
@@ -91,7 +91,7 @@ const Footer = () => {
                       label: "Pinterest",
                     },
                     {
-                      icon: (props: any) => (
+                      icon: (props: LucideProps) => (
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
