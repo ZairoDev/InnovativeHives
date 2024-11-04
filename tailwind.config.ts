@@ -13,6 +13,7 @@ const config: Config = {
   			dark: '#121212',
   			primary_color: '#119D60',
   			secondary_color: '#1BB170',
+			background_colour: '#121212',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

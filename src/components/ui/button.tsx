@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         company:
-          "bg-secondary_color px-20 py-10  text-white text-xl shadow-sm hover:bg-primary_color",
+          "bg-primary_color hover:bg-primary_color text-white shadow hover:bg-primary/90",
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive:

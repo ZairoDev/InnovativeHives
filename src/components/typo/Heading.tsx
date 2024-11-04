@@ -10,7 +10,7 @@ const CustomHeading = ({ heading, className = "" }: CustomHeadingProps) => {
   return (
     <div className="">
       <h1
-        className={`md:text-5xl lg:text-6xl  sm:text-5xl text-3xl ${className}`}
+        className={` sm:text-5xl text-4xl ${className}`}
       >
         <FadeInBlur>{heading}</FadeInBlur>
       </h1>

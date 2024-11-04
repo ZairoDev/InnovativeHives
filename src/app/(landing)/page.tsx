@@ -4,14 +4,22 @@ import Particles from "../../components/ui/particles";
 import {
   ArrowRight,
   Check,
+  CheckCircle,
   CheckCircle2,
   CurlyBraces,
+  DribbbleIcon,
+  Facebook,
   FileText,
   GitBranch,
-  Link,
+  Instagram,
+  Link2,
+  LucideFileInput,
+  Mail,
   Map,
+  MapPin,
   MessageCircle,
   MessageSquare,
+  Phone,
   Rocket,
   Search,
   Shield,
@@ -27,12 +35,17 @@ import CustomHeading from "@/components/typo/Heading";
 import Image from "next/image";
 import FadeInBlur from "@/components/FadeInBlur";
 import SlideInFromTop from "@/components/SlideInFromTop";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const HeroPage = () => {
   return (
     <>
       {/* HeroSection */}
-      <section className="relative overflow-hidden  border-b border-neutral-800 ">
+      <section className="relative overflow-hidden mt-24  border-b border-neutral-800 ">
         <Particles
           className="absolute inset-0"
           quantity={500}
@@ -44,17 +57,20 @@ const HeroPage = () => {
           <div className="container mx-auto px-4  md:py-14 py-4">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="order-1 lg:order-2">
-                <CustomHeading heading="Global Marketing Consulting Agency" />
+                <CustomHeading
+                  className="lg:text-6xl text-5xl"
+                  heading="Global Marketing Consulting Agency"
+                />
                 <FadeInBlur>
-                  <p className="text-xl md:text-2xl sm:mt-10  text-gray-300 mb-8">
+                  <p className=" lg:text-3xl text-2xl mt-10  text-gray-300 mb-8">
                     We&apos;re a global marketing company delivering innovative
                     solutions to our clients.
                   </p>
                 </FadeInBlur>
                 <FadeInBlur>
                   <Button
-                    size="lg"
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-lg  sm:w-auto"
+                    variant="company"
+                    className=" bg-primary_color   text-background_colour hover:bg-secondary_color rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto "
                   >
                     Get a Consultation
                   </Button>
@@ -76,7 +92,7 @@ const HeroPage = () => {
                   </div>
                 </FadeInBlur>
               </div>
-              <div className="relative order-2 lg:order-1">
+              <div className="relative  order-2 lg:order-1">
                 <div className="rounded-3xl overflow-hidden">
                   <FadeInBlur>
                     <img
@@ -94,7 +110,7 @@ const HeroPage = () => {
                 </div>
                 <div className="absolute  sm:-left-14 left-0 sm:bottom-20 bottom-0 flex flex-col gap-3">
                   <FadeInBlur>
-                    <div className="bg-white/10 backdrop-blur-sm  rounded-full text-white border  flex gap-2 items-center py-2 px-4">
+                    <div className="bg-white/10 backdrop-blur-sm  rounded-full text-white border flex gap-2 items-center py-2 px-4">
                       <div className="bg-pink-800 p-2 rounded-full ">
                         <Users className="" size={18} />
                       </div>
@@ -209,7 +225,7 @@ const HeroPage = () => {
             />
           </div>
 
-          <div className="relative z-20 px-6 mx-auto max-w-7xl lg:px-8  flex flex-col justify-center">
+          <div className="relative z-20 px-6 mx-auto max-w-7xl lg:px-8  flex flex-col gap-y-10 justify-center">
             <div className="max-w-xl pt-20 pb-32 sm:pt-48 sm:pb-40">
               <FadeInBlur>
                 <h1 className="md:text-5xl lg:text-6xl  sm:text-5xl text-3xl">
@@ -240,19 +256,19 @@ const HeroPage = () => {
                   para="Contact us and get free marketing consultation for your
                 business."
                 />
-                <Button className=" bg-white ml-1 mt-10 text-black hover:opacity-80 hover:bg-white hover:text-black px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-lg  sm:w-auto">
+                <Button className=" bg-white  mt-6 text-background_colour hover:bg-white/90 rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto ">
                   Get a Consultation
                 </Button>
               </FadeInBlur>
 
-              <div className="mt-10 ml-1">
+              <div className=" mt-6 ml-1">
                 <FadeInBlur>
                   <p className="mb-8 text-xl font-normal text-white">
                     Trusted by leading companies
                   </p>
                 </FadeInBlur>
                 <FadeInBlur>
-                  <div className="flex flex-wrap items-center gap-x-10 gap-y-8">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-8">
                     <div className="border px-4 py-2 rounded-lg">
                       <h1>Github</h1>
                     </div>
@@ -603,7 +619,7 @@ const HeroPage = () => {
                 variant="ghost"
                 className="text-white  bg-white/10 gap-2 text-lg h-12 px-6 rounded-full"
               >
-                <Link className="w-5 h-5" />
+                <Link2 className="w-5 h-5" />
                 Read Clients Stories
                 <span className="ml-1">→</span>
               </Button>
@@ -724,6 +740,7 @@ const HeroPage = () => {
         </div>
       </section>
       {/* Client section */}
+      {/* I ahve make it better */}
       <section className="max-w-7xl m-auto">
         <div className="my-20">
           <CustomHeading
@@ -731,57 +748,65 @@ const HeroPage = () => {
             heading="Clients Stories"
           />
           {/* Card one */}
-          <div className="  flex items-center justify-center  ">
-            <div className="">
-              <div className="grid md:grid-cols-2 gap-x-20 items-center">
-                <div className="relative">
-                  <div className=" overflow-hidden rounded-2xl">
-                    <img
-                      src="https://vacationsaga.b-cdn.net/assets/pehlabhai.webp"
-                      alt="Marketing Consultant"
-                      className=" aspect-square  object-cover"
-                    />
+          <FadeInBlur>
+            <div className="  flex items-center justify-center  ">
+              <div className="">
+                <div className="grid md:grid-cols-2 gap-x-20 p-2 items-center">
+                  <div className="relative">
+                    <div className=" overflow-hidden rounded-2xl">
+                      <img
+                        src="https://vacationsaga.b-cdn.net/assets/pehlabhai.webp"
+                        alt="Marketing Consultant"
+                        className="md:max-w-md w-full md:hidden h-96 object-cover"
+                      />
+                      <img
+                        src="https://vacationsaga.b-cdn.net/assets/pehlabhai.webp"
+                        alt="Marketing Consultant"
+                        className="md:max-w-md hidden md:block"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute -left-8 top-4 text-[100px] leading-none text-gray-700 font-serif opacity-50">
-                    “
-                  </div>
-                  <div className=" z-10">
-                    <CustomPara
-                      para="This template is so beautiful and has such wonderful new
+                  <div className="relative">
+                    <div className="absolute -left-20 -top-20 text-[400px]  leading-none text-gray-700 font-serif opacity-50">
+                      “
+                    </div>
+                    <div className=" z-10">
+                      <CustomPara
+                        className="lg:text-3xl sm:text-2xl md:text-2xl text-2xl leading-8 "
+                        para="This template is so beautiful and has such wonderful new
                       options. It is updated often which gives me even more
                       quality. The support is the absolute best I've ever
                       had the pleasure of interacting with. Quick, courteous,
                       premium and extremely helpful!"
-                    />
+                      />
 
-                    {/* Author Info */}
-                    <FadeInBlur>
-                      <div className="flex flex-col">
-                        <div className="w-12 h-0.5 bg-white/20 mb-6"></div>
-                        <div className="text-lg text-white font-medium">
-                          Adam Peterson
+                      {/* Author Info */}
+                      <FadeInBlur>
+                        <div className="flex flex-col">
+                          <div className="w-12 h-0.5 bg-white/20 mb-6"></div>
+                          <div className="text-lg text-white font-medium">
+                            Adam Peterson
+                          </div>
+                          <p className="mt-1 text-lg"> Marketing Consultant</p>
                         </div>
-                        <p className="mt-1 text-lg"> Marketing Consultant</p>
-                      </div>
-                    </FadeInBlur>
+                      </FadeInBlur>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </FadeInBlur>
           {/* Card Two */}
-          <div className="  flex items-center justify-center ">
-            <div className="">
-              <div className="grid md:grid-cols-2 gap-x-20 items-center">
-                <div className="relative">
-                  <div className="absolute -left-8 top-4 text-[100px] leading-none text-gray-700 font-serif opacity-50">
+          <FadeInBlur>
+            <div className="p-4">
+              <div className="flex md:flex-row flex-col justify-between ">
+                <div className="relative w-full order-2 md:order-1 mt-8 md:mt-0">
+                  <div className="absolute -left-20 -top-20 text-[400px]  leading-none text-gray-700 font-serif opacity-50">
                     “
                   </div>
-                  <div className="relative z-10">
+                  <div className="md:max-w-lg w-full">
                     <CustomPara
-                      className="md:text-4xl"
+                      className="lg:text-3xl sm:text-2xl md:text-2xl text-2xl leading-8 "
                       para="Optimization and structure are very good for SEO basics. A remarkable model, everything has been thought out with talent, the design, the various adaptations. Beautiful template, nice code and easy to customize."
                     />
                     <FadeInBlur>
@@ -795,122 +820,393 @@ const HeroPage = () => {
                     </FadeInBlur>
                   </div>
                 </div>
-                <div className="relative flex-1">
+
+                {/* Image - Order 1 on mobile, 2 on desktop */}
+                <div className="relative flex-1 order-1 md:order-2">
                   <div className="rounded-2xl overflow-hidden">
                     <img
                       src="https://vacationsaga.b-cdn.net/assets/doosrabhai.webp"
                       alt="Marketing Consultant"
-                      className=" aspect-square   object-cover"
+                      className="md:max-w-md md:hidden w-full h-96 object-cover"
+                    />
+                    <img
+                      src="https://vacationsaga.b-cdn.net/assets/doosrabhai.webp"
+                      alt="Marketing Consultant"
+                      className="md:max-w-md hidden md:block"
                     />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </FadeInBlur>
         </div>
       </section>
-
-      {/* One more section will go here */}
-
-      <section className="max-w-7xl m-auto p-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="w-full">
-            <FadeInBlur>
-              <CustomHeading heading="Our Blog" />
-              <CustomPara para="Check the best marketing resources and the latest news about our company." />
-            </FadeInBlur>
-            <Button
-              variant="ghost"
-              className="text-white mt-8 bg-white/10 gap-2 text-lg h-12 px-6 rounded-full"
-            >
-              <Link className="w-5 h-5" />
-              Read Clients Stories
-              <span className="ml-1">→</span>
-            </Button>
-          </div>
-          <div className="flex flex-col cursor-pointer group">
-            <FadeInBlur>
-              <div className="rounded-2xl overflow-hidden mb-6 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg">
-                <img
-                  src="https://vacationsaga.b-cdn.net/assets/img2.webp"
-                  className="w-full h-[300px] object-cover"
-                />
-              </div>
-            </FadeInBlur>
-            <SlideInFromTop>
-              <h3 className="md:text-xl  lg:text-2xl text-lg text-white font-normal mb-6 leading-tight relative inline-block">
-                How Surface Mobility Increased Sales 3X During
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </h3>
-            </SlideInFromTop>
-            <div className="mt-auto">
-              <SlideInFromTop>
-                <div className="text-7xl text-white font-normal mb-2">3x</div>
-              </SlideInFromTop>
-              <SlideInFromTop>
-                <div className="text-lg text-white/80">
-                  sales increased with Resonance
-                </div>
-              </SlideInFromTop>
-            </div>
-          </div>
-          <div className="flex flex-col cursor-pointer group">
-            <FadeInBlur>
-              <div className="rounded-2xl overflow-hidden mb-6 transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:shadow-lg">
-                <img
-                  src="https://vacationsaga.b-cdn.net/assets/img3.webp"
-                  alt="Marketing Wire team member"
-                  className="w-full h-[300px] object-cover"
-                />
-              </div>
-            </FadeInBlur>
-            <SlideInFromTop>
-              <h3 className="md:text-xl  lg:text-2xl text-lg text-white font-normal mb-6 leading-tight relative inline-block">
-                How Gen Machine Uses Automations to Grow
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </h3>
-            </SlideInFromTop>
-
-            <div className="mt-auto">
-              <SlideInFromTop>
-                <div className="text-7xl text-white font-normal mb-2">Zero</div>
-              </SlideInFromTop>
-              <SlideInFromTop>
-                <div className="text-lg text-white/80">
-                  negative reviews with Resonance
-                </div>
-              </SlideInFromTop>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 ">
-        <div className="max-w-7xl m-auto bg-red-600 py-20 rounded-lg">
-          <div className="flex items-center mb-10  justify-center ">
-            <img
-              src="https://vacationsaga.b-cdn.net/assets/resonance.webp"
-              alt="/"
+      {/* I have to make it better  */}
+      <section>
+        <div className="relative w-full min-h-screen">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://vacationsaga.b-cdn.net/assets/corporate2.jpg"
+              alt="Marketing consultation meeting"
+              fill
+              className="object-cover"
+              priority
             />
-            <div>
-              <p className="text-3xl text-center">
-                Stay informed with <br />
-                our weekly newsletter
-              </p>
+          </div>
+
+          {/* Gradient Overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(16,185,129,0.7) 50%, rgba(16,185,129,1) 100%)",
+            }}
+          />
+
+          {/* Content */}
+          <div className="relative min-h-screen">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 max-w-3xl px-8 md:px-16">
+              <FadeInBlur>
+                <h1 className="md:text-5xl lg:text-6xl  sm:text-5xl text-3xl">
+                  Marketing
+                  <span className="relative inline-block">
+                    Jumpstart
+                    <svg
+                      className="absolute -bottom-0.5 w-full"
+                      height="8"
+                      viewBox="0 0 200 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 5.5C47.3333 2.16667 154.4 -2.4 199 6"
+                        stroke="#F97316"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                  for Your Business
+                </h1>
+              </FadeInBlur>
+              <CustomPara
+                para=" The marketing audit is generally conducted by a third person,
+                not a member of an organization."
+              ></CustomPara>
+
+              <FadeInBlur>
+                <Button
+                  variant="company"
+                  className=" bg-white  my-6 text-background_colour hover:bg-white/90 rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto "
+                >
+                  Get a Consultation
+                </Button>
+              </FadeInBlur>
+
+              <FadeInBlur>
+                <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                  {[
+                    "Business to business",
+                    "Business to customer",
+                    "Non-profit business",
+                    "Ecommerce",
+                  ].map((text) => (
+                    <div key={text} className="flex items-center gap-2">
+                      <div className="rounded-full bg-[#EAA92B] p-1">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-white lg:text-xl  text-lg">
+                        {text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </FadeInBlur>
             </div>
           </div>
-          <div className="max-w-2xl  flex gap-x-2 m-auto">
-            <input className="w-full border px-4 focus:outline-none rounded-lg py-4" />
-            <button className="p-4 bg-primary_color rounded-lg">
-              SubscribeNow
-            </button>
-          </div>
-          <p className="text-xs text-center mt-2">
-            By sending the form you agree to the Terms & Conditions and Privacy
-            Policy.
-          </p>
         </div>
       </section>
+      {/* Our blog section */}
+      <section className="">
+        <div className=" py-20 p-2 ">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-[1fr,2fr] gap-12">
+              {/* Left Column */}
+              <div className="space-y-6">
+                <CustomHeading heading="Our Blog" />
+                <CustomPara
+                  para="Check the best marketing resources and the latest news about
+                  our company."
+                />
+                <Button
+                  variant="outline"
+                  className="group bg-gray-900/50  text-white border-gray-800 rounded-full pl-4 pr-5 py-6 flex items-center gap-2"
+                >
+                  <Link2 className="w-4 h-4" />
+                  <span>Read All Articles</span>
+                </Button>
+              </div>
+
+              {/* Right Column - Blog Cards */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* First Blog Card */}
+                <FadeInBlur>
+                  <Card className="bg-background_colour border-none  overflow-hidden">
+                    <div className="relative h-48 md:h-64">
+                      <Image
+                        src="https://vacationsaga.b-cdn.net/assets/img2.webp"
+                        alt="Content Marketing"
+                        fill
+                        className="object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <CardHeader className="py-2 px-0">
+                      <CardTitle className="text-xl md:text-2xl text-white">
+                        Content Marketing Steps That Will Help You to Grow Your
+                        Business
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4 py-2 px-0">
+                      <p className="text-gray-400">
+                        The macro-environment, over which a firm holds little
+                        control, consists of a variety of external factors that
+                        manifest on a large scale.
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm text-gray-500">
+                          February 13, 2022
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs bg-primary_color text-gray-300">
+                          Articles
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </FadeInBlur>
+
+                {/* Second Blog Card */}
+                <FadeInBlur>
+                  <Card className=" border-none bg-background_colour  overflow-hidden">
+                    <div className="relative h-48 md:h-64">
+                      <Image
+                        src="https://vacationsaga.b-cdn.net/assets/img3.webp"
+                        alt="Marketing Trends"
+                        fill
+                        className="object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <CardHeader className="py-2 px-0">
+                      <CardTitle className="text-xl md:text-2xl text-white">
+                        Top Five Trends for Small Investment Companies Marketing
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4 py-2 px-0">
+                      <p className="text-gray-400">
+                        The micro-environment, over which a firm holds a greater
+                        amount control, typically includes Employees, Suppliers
+                        and the Media and marketing.
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm text-gray-500">
+                          February 11, 2023
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs bg-primary_color text-gray-300">
+                          Tutorials
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </FadeInBlur>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* One more section will go here */}
+      <FadeInBlur>
+        <section className=" p-2 ">
+          <div className="max-w-7xl m-auto  bg-gradient-to-l from-[#2D271A] to-[#2A1B20] py-20 rounded-lg">
+            <div className="flex items-center sm:fle-row flex-col mb-10  justify-center ">
+              <img
+                src="https://vacationsaga.b-cdn.net/assets/resonance.webp"
+                alt="/"
+              />
+              <div>
+                <p className="text-3xl text-center">
+                  Stay informed with <br />
+                  our weekly newsletter
+                </p>
+              </div>
+            </div>
+            <div className="max-w-3xl p-2  flex md:flex-row flex-col gap-2 m-auto">
+              <input className="w-full  bg-transparent border px-4 focus:outline-none rounded-lg py-4" />
+              <Button
+                variant="company"
+                className=" bg-primary_color  text-background_colour hover:bg-secondary_color rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto "
+              >
+                Subscribe Now
+              </Button>
+            </div>
+            <p className="text-xs text-center mt-2">
+              By sending the form you agree to the Terms & Conditions and
+              Privacy Policy.
+            </p>
+          </div>
+        </section>
+      </FadeInBlur>
+      ?{/* Contact form section is here */}
+      <FadeInBlur>
+        <section className="">
+          <div className=" py-20 relative">
+            <div className="max-w-4xl mx-auto ">
+              <CustomHeading
+                className="text-center mb-6"
+                heading="Let's have a conversation"
+              />
+              <CustomPara
+                className="text-center mb-8"
+                para="We're open to talking to good people. Just say hello, and we'll start productive cooperation. Start your own success story."
+              />
+            </div>
+
+            <div className="w-full absolute top-20 opacity-35">
+              <img
+                className="w-full h-auto object-contain"
+                src="https://vacationsaga.b-cdn.net/assets/decoration-4.svg"
+                alt="Decorative pattern"
+              />
+            </div>
+          </div>
+
+          <div className="p-2">
+            <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-12 gap-8">
+              {/* Left Column - Contact Info (30%) */}
+              <Card className="lg:col-span-4 bg-emerald-600 text-white border-0 w-full">
+                <CardContent className="p-8 space-y-12">
+                  {/* Address Section */}
+                  <div className="flex items-start  gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="space-y-2 border-b pb-2">
+                      <FadeInBlur>
+                        <h3 className="text-xl font-semibold">Address</h3>
+                      </FadeInBlur>
+                      <FadeInBlur>
+                        <p className="text-white/90">
+                          Envato Pty Ltd, PO Box 16122 Collins Street, West
+                          Victoria.
+                        </p>
+                      </FadeInBlur>
+                    </div>
+                  </div>
+
+                  {/* Email Section */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="space-y-2 border-b pb-2">
+                      <FadeInBlur>
+                        <h3 className="text-xl font-semibold">Email</h3>
+                      </FadeInBlur>
+                      <FadeInBlur>
+                        <p className="text-white/90">ibthemes21@gmail.com</p>
+                      </FadeInBlur>
+                    </div>
+                  </div>
+
+                  {/* Phone Section */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="space-y-2 border-b pb-2">
+                      <FadeInBlur>
+                        <h3 className="text-xl font-semibold">Phone</h3>
+                      </FadeInBlur>
+                      <FadeInBlur>
+                        <p className="text-white/90">+1 837 652 8800</p>
+                      </FadeInBlur>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="lg:col-span-8 border md:p-5 p-1 border-neutral-800 bg-background_colour">
+                <CardHeader>
+                  <CustomHeading
+                    className="text-white lg:text-4xl md:text-3xl sm:text-2xl text-xl"
+                    heading="We'd love to hear from you"
+                  />
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <FadeInBlur>
+                        <label htmlFor="name" className="text-lg text-gray-400">
+                          Name
+                        </label>
+                      </FadeInBlur>
+                      <input className="w-full text-white border-neutral-800 bg-background_colour  border px-4 focus:outline-none rounded-lg py-4" />
+                    </div>
+                    <div className="space-y-2">
+                      <FadeInBlur>
+                        <label htmlFor="name" className="text-lg text-gray-400">
+                          Email
+                        </label>
+                      </FadeInBlur>
+                      <input className="w-full text-white border-neutral-800 bg-background_colour  border px-4 focus:outline-none rounded-lg py-4" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <FadeInBlur>
+                      <label
+                        htmlFor="message"
+                        className="text-sm text-gray-400"
+                      >
+                        Message
+                      </label>
+                    </FadeInBlur>
+                    <Textarea
+                      id="message"
+                      placeholder="Enter your message"
+                      className="w-full text-white bg-background_colour border-neutral-800 min-h-40 border px-4 focus:outline-none rounded-lg "
+                    />
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-gray-400">
+                        All the fields are required. By sending the form you
+                        agree to the{" "}
+                        <span className="underline cursor-pointer mr-1">
+                          Terms & Conditions
+                        </span>
+                        and{" "}
+                        <span className="underline cursor-pointer">
+                          Privacy Policy
+                        </span>
+                        .
+                      </p>
+                    </div>
+
+                    <div>
+                      <Button
+                        variant="company"
+                        className=" bg-primary_color   text-background_colour hover:bg-secondary_color rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto "
+                      >
+                        Get a Consultation
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </FadeInBlur>
+      {/* Footer Section is here */}
+      <Footer />
     </>
   );
 };
