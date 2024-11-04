@@ -1045,7 +1045,7 @@ const HeroPage = () => {
           </div>
         </section>
       </FadeInBlur>
-      ?{/* Contact form section is here */}
+      {/* Contact form section is here */}
       <FadeInBlur>
         <section className="">
           <div className=" py-20 relative">
