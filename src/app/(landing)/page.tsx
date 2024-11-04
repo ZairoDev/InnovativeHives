@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Particles from "../../components/ui/particles";
 import {
   ArrowRight,
@@ -32,7 +32,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 
 const HeroPage = () => {
-
   return (
     <>
       {/* HeroSection */}
