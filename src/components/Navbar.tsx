@@ -28,10 +28,10 @@ const Navbar = () => {
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-white hover:text-emerald-500 transition-colors relative group"
+                  className="text-white hover:text-primary_color transition-colors relative group"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-500 scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-secondary_color scale-x-0 group-hover:scale-x-100 transition-transform"></span>
                 </Link>
               )
             )}
@@ -39,7 +39,7 @@ const Navbar = () => {
 
           {/* Contact and Social Links */}
           <div className="hidden lg:flex items-center   gap-8">
-            <div className="flex items-center text-emerald-500 font-medium">
+            <div className="flex items-center text-primary_color font-medium">
               <Phone className="w-5 h-5 mr-2" />
               +1 (837) 652 8800
             </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
                 <Link
                   key={index}
                   href="/"
-                  className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center hover:border-emerald-500 hover:text-emerald-500 text-white transition-colors"
+                  className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary_color hover:text-primary_color text-white transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-white hover:text-emerald-500 transition-colors py-2"
+                  className="text-white hover:text-primary_color transition-colors py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
@@ -83,7 +83,7 @@ const Navbar = () => {
               )
             )}
             <div className="border-t border-gray-800 pt-4 mt-2">
-              <div className="flex items-center text-emerald-500 font-medium mb-4">
+              <div className="flex items-center text-primary_color font-medium mb-4">
                 <Phone className="w-5 h-5 mr-2" />
                 +1 (837) 652 8800
               </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     href="/"
-                    className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center hover:border-emerald-500 hover:text-emerald-500 text-white transition-colors"
+                    className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary_color hover:text-primary_color text-white transition-colors"
                   >
                     <Icon className="w-4 h-4" />
                   </Link>
