@@ -27,7 +27,7 @@ export const sendContactEmail = async ({
     // Set up email options
     const mailOptions = {
       from: `No Reply <no-reply@yourdomain.com>`,
-      to: "aviralm522@gmail.com",
+      to: "zairo.international@gmail.com",
       subject: "Contact Form Submission",
       text: text,
     };
