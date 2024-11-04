@@ -10,9 +10,9 @@ const Footer = () => {
     <>
       <FadeInBlur>
         <section className=" py-20">
-          <footer className="   px-6">
+          <footer className="px-4">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[3fr,1fr,1fr] gap-4">
+              <div className="grid grid-cols-1  md:grid-cols-[3fr,1fr,1fr] gap-4">
                 {/* Left Column */}
                 <div className="space-y-8 ">
                   <CustomHeading
@@ -34,9 +34,9 @@ const Footer = () => {
                       <Link
                         key={item}
                         href="#"
-                        className="block text-gray-300 hover:text-white transition-colors"
+                        className="block line-clamp-1 text-gray-300 hover:text-white transition-colors"
                       >
-                        {item}
+                        <p className="line-clamp-1"> {item}</p>
                       </Link>
                     )
                   )}
@@ -53,9 +53,9 @@ const Footer = () => {
                     <Link
                       key={item}
                       href="#"
-                      className="block text-gray-300 hover:text-white transition-colors"
+                      className="block  text-gray-300 hover:text-white transition-colors"
                     >
-                      {item}
+                      <p className="line-clamp-1"> {item}</p>
                     </Link>
                   ))}
                 </nav>
@@ -112,7 +112,7 @@ const Footer = () => {
                   ].map((item) => (
                     <Link
                       key={item.label}
-                      href="#"
+                      href="/"
                       className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-600 transition-colors"
                       aria-label={item.label}
                     >
