@@ -76,7 +76,7 @@ const HeroPage = () => {
         },
       });
     } catch (err: unknown) {
-      toast.error("Email not sent");
+      toast.error(`${err}`);
     } finally {
       nameRef.current.value = "";
       emailRef.current.value = "";
