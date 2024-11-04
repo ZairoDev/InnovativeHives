@@ -32,15 +32,13 @@ import SlideInFromTop from "@/components/SlideInFromTop";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 import axios from "axios";
-import { useToast } from "@/hooks/use-toast";
-import { Toaster } from "@/components/ui/toaster";
+import toast, { Toaster } from "react-hot-toast";
 
 const HeroPage = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
 
   const handleContactForm = async () => {
     if (
@@ -48,31 +46,37 @@ const HeroPage = () => {
       !emailRef.current?.value ||
       !messageRef.current?.value
     ) {
-      toast({
-        title: "All Fields are required!",
-        description: "Please fill all the fields.",
-        variant: "destructive",
+      toast("All Fields are required!", {
+        icon: "❌",
+        style: {
+          borderRadius: "10px",
+          border: "1px solid #FFFAEE",
+          background: "#121212",
+          color: "#fff",
+        },
       });
       return;
     }
     setIsLoading(true);
     try {
-      const response = await axios.post("/api/contact", {
+      await axios.post("/api/contact", {
         name: nameRef.current.value,
         email: emailRef.current.value,
         message: messageRef.current.value,
       });
-      toast({
-        title: "Query Sent Successfully!",
-        description: "We will get back to you soon.",
-        variant: "themed",
+      toast.success("Query Sent Successfully!", {
+        style: {
+          border: "1px solid #B7664A",
+          padding: "16px",
+          color: "#B7664A",
+        },
+        iconTheme: {
+          primary: "#B7664A",
+          secondary: "#FFFAEE",
+        },
       });
     } catch (err: unknown) {
-      toast({
-        title: "Email Not Sent!",
-        description: "Some error occurred while sending mail",
-        variant: "destructive",
-      });
+      toast.error("Email not sent");
     } finally {
       nameRef.current.value = "";
       emailRef.current.value = "";
@@ -83,7 +87,7 @@ const HeroPage = () => {
 
   return (
     <>
-      <Toaster />
+      <Toaster position="bottom-right" />
       {/* HeroSection */}
       <section className="relative overflow-hidden mt-24  border-b border-neutral-800 ">
         <Particles

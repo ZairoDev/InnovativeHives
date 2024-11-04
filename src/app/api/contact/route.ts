@@ -12,13 +12,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const emailResponse = await sendContactEmail({ name, email, message });
+    await sendContactEmail({ name, email, message });
 
     return NextResponse.json(
       { message: "Email sent successfully" },
       { status: 201 }
     );
   } catch (err: unknown) {
-    return NextResponse.json({ error: "Unable to send mail" }, { status: 500 });
+    return NextResponse.json(
+      { error: `Unable to send mail ${err}` },
+      { status: 500 }
+    );
   }
 }

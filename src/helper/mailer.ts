@@ -11,7 +11,7 @@ export const sendContactEmail = async ({
   message: string;
 }) => {
   try {
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: "zairo.developer@gmail.com",
