@@ -32,7 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 
 const HeroPage = () => {
-  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <>
       {/* HeroSection */}
