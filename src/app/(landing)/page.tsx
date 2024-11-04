@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Particles from "../../components/ui/particles";
 import {
   ArrowRight,
@@ -10,6 +10,7 @@ import {
   FileText,
   GitBranch,
   Link2,
+  LoaderCircle,
   Mail,
   Map,
   MapPin,
@@ -30,10 +31,59 @@ import FadeInBlur from "@/components/FadeInBlur";
 import SlideInFromTop from "@/components/SlideInFromTop";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
+import axios from "axios";
+import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const HeroPage = () => {
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleContactForm = async () => {
+    if (
+      !nameRef.current?.value ||
+      !emailRef.current?.value ||
+      !messageRef.current?.value
+    ) {
+      toast({
+        title: "All Fields are required!",
+        description: "Please fill all the fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const response = await axios.post("/api/contact", {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        message: messageRef.current.value,
+      });
+      toast({
+        title: "Query Sent Successfully!",
+        description: "We will get back to you soon.",
+        variant: "themed",
+      });
+    } catch (err: unknown) {
+      toast({
+        title: "Email Not Sent!",
+        description: "Some error occurred while sending mail",
+        variant: "destructive",
+      });
+    } finally {
+      nameRef.current.value = "";
+      emailRef.current.value = "";
+      messageRef.current.value = "";
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
+      <Toaster />
       {/* HeroSection */}
       <section className="relative overflow-hidden mt-24  border-b border-neutral-800 ">
         <Particles
@@ -1138,7 +1188,10 @@ const HeroPage = () => {
                           Name
                         </label>
                       </FadeInBlur>
-                      <input className="w-full text-white border-neutral-800 bg-background_colour  border px-4 focus:outline-none rounded-lg py-4" />
+                      <input
+                        className="w-full text-white border-neutral-800 bg-background_colour  border px-4 focus:outline-none rounded-lg py-4"
+                        ref={nameRef}
+                      />
                     </div>
                     <div className="space-y-2">
                       <FadeInBlur>
@@ -1146,7 +1199,10 @@ const HeroPage = () => {
                           Email
                         </label>
                       </FadeInBlur>
-                      <input className="w-full text-white border-neutral-800 bg-background_colour  border px-4 focus:outline-none rounded-lg py-4" />
+                      <input
+                        className="w-full text-white border-neutral-800 bg-background_colour  border px-4 focus:outline-none rounded-lg py-4"
+                        ref={emailRef}
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -1162,6 +1218,7 @@ const HeroPage = () => {
                       id="message"
                       placeholder="Enter your message"
                       className="w-full text-white py-4 bg-background_colour border-neutral-800 min-h-40 border px-4 focus:outline-none rounded-lg "
+                      ref={messageRef}
                     />
                   </div>
                   <div className="space-y-4">
@@ -1183,9 +1240,13 @@ const HeroPage = () => {
                     <div>
                       <Button
                         variant="company"
-                        className=" bg-primary_color   text-background_colour hover:bg-secondary_color rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto "
+                        className=" bg-primary_color   text-background_colour hover:bg-secondary_color rounded-xl  md:text-xl text-lg md:px-8 md:py-6 px-6 py-4 h-auto flex gap-x-2 items-center"
+                        onClick={handleContactForm}
                       >
-                        Get a Consultation
+                        Get a Consultation{" "}
+                        {isLoading && (
+                          <LoaderCircle className=" animate-spin" />
+                        )}
                       </Button>
                     </div>
                   </div>
