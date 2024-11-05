@@ -40,6 +40,7 @@ export const sendContactEmail = async ({
       { status: 201 }
     );
   } catch (error) {
+    
     console.error("Error sending no-reply email:", error);
     return NextResponse.json({ error: "Error sending email" }, { status: 500 });
   }
