@@ -92,9 +92,9 @@ const HeroPage = () => {
       <section className="relative overflow-hidden mt-24  border-b border-neutral-800 ">
         <Particles
           className="absolute inset-0"
-          quantity={500}
+          quantity={1000}
           ease={80}
-          color="#ffffff"
+          color="#B7664A"
           refresh
         />
         <div className="relative min-h-screen">
@@ -235,7 +235,7 @@ const HeroPage = () => {
             </div>
           </div>
           <FadeInBlur>
-            <div className="flex items-center z-50 mt-10 justify-center">
+            <div className="flex  items-center z-50 mt-10 justify-center">
               <Button className="group cursor-pointer bg-gray-800/50 hover:bg-gray-700/50 text-gray-200 rounded-full pl-3 pr-4 py-6 flex items-center gap-2 shadow-lg backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
                 <span className="bg-pink-600 p-1.5 rounded-full">
                   <Star className="w-4 h-4" />
@@ -1068,7 +1068,7 @@ const HeroPage = () => {
       {/* One more section will go here */}
       <FadeInBlur>
         <section className=" p-2 ">
-          <div className="max-w-7xl m-auto  bg-gradient-to-l from-[#2D271A] to-[#2A1B20] py-20 rounded-lg">
+          <div className="max-w-7xl m-auto  bg-gradient-to-l from-[#2D271A] to-[#2A1B20] py-10 rounded-lg">
             <div className="flex items-center sm:fle-row flex-col mb-10  justify-center ">
               <img
                 src="https://vacationsaga.b-cdn.net/assets/resonance.webp"
@@ -1090,7 +1090,7 @@ const HeroPage = () => {
                 Subscribe Now
               </Button>
             </div>
-            <p className="text-xs text-center mt-2">
+            <p className="text-xs p-2 text-center mt-2">
               By sending the form you agree to the Terms & Conditions and
               Privacy Policy.
             </p>

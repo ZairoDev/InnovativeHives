@@ -8,8 +8,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className=" bg-background_colour fixed w-full top-0 z-50">
-      <nav className="max-w-7xl mx-auto p-4">
+    <header className=" sm:bg-background_colour/30 bg-background_colour sm:backdrop-blur-lg fixed w-full top-0 z-50">
+      <nav className="max-w-7xl mx-auto p-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -28,15 +28,14 @@ const Navbar = () => {
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-white hover:text-primary_color transition-colors relative group"
+                  className="text-white hover:text-primary_color  relative group"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-secondary_color scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary_color scale-x-0 group-hover:scale-x-100 transition-transform"></span>
                 </Link>
               )
             )}
           </div>
-
           {/* Contact and Social Links */}
           <div className="hidden lg:flex items-center   gap-8">
             <div className="flex items-center text-primary_color font-medium">
@@ -48,7 +47,7 @@ const Navbar = () => {
                 <Link
                   key={index}
                   href="/"
-                  className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary_color hover:text-primary_color text-white transition-colors"
+                  className="w-8 h-8 rounded-full border   flex items-center justify-center hover:border-primary_color hover:text-primary_color text-white transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </Link>
@@ -69,7 +68,7 @@ const Navbar = () => {
         <div
           className={`lg:hidden h-screen ${isOpen ? "block" : "hidden"} pt-4`}
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-xl ml-3">
             {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map(
               (item) => (
                 <Link
